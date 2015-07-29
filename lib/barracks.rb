@@ -1,17 +1,19 @@
 # require_relative 'footman'
 # require_relative 'peasant'
 
-class Barracks
+class Barracks < Unit
 	attr_accessor :gold, :food
+	def initialize
+		super(500, 0)
+			# @health_points = 500
+			# @attack_power = 0
+			@gold = 1000
+			@food = 80
+	end
 
   def can_train_footman?
 		gold >= 135 && food >= 2
   end
-
-	def initialize
-		@gold = 1000
-		@food = 80
-	end
 
 	def train_footman
 		if can_train_footman? 
@@ -34,5 +36,11 @@ class Barracks
 			Peasant.new
 		end
 	end
+	
+	def damage(attack_power)
+    @health_points -= attack_power
+  end
+
 end
+
 
