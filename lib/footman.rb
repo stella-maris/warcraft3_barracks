@@ -1,7 +1,6 @@
 # http://classic.battle.net/war3/human/units/footman.shtml
 
 class Footman < Unit
-	attr_accessor :health_points, :attack_power
   
   def initialize
     # Need to default the 2 instance variables here
